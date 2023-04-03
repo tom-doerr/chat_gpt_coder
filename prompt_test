@@ -1,0 +1,94 @@
+  1 import streamlit as st
+  2 from random import random
+  3 
+  4 
+  5 if 'all_messages' not in st.session_state:
+  6     st.session_state.all_messages = []
+  7 
+  8 st.write("All messages:")
+  9 for message in st.session_state.all_messages:
+ 10     st.write(message)
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 txt = st.text_area('Text to analyze', '''
+ 16     It was the best of times, it was the worst of times, it was
+ 17     the age of wisdom, it was the age of foolishness, it was
+ 18     the epoch of belief, it was the epoch of incredulity, it
+ 19     was the season of Light, it was the season of Darkness, it
+ 20     was the spring of hope, it was the winter of despair, (...)
+ 21     ''',
+ 22     disabled=True,
+ 23     )
+ 24 
+ 25 
+ 26 
+ 27 
+ 28 # Runs once during app start
+ 29 if "variables_setup" not in st.session_state:
+ 30     st.session_state["variables_setup"] = True
+ 31     st.session_state.input_message_key = str(random())
+ 32 
+ 33 # message input
+ 34 input_message = st.text_input(
+ 35     label = "-",
+ 36     label_visibility = "collapsed",
+ 37     key=st.session_state.input_message_key,                                           
+ 38 )                                                                                     
+ 39                                                                                       
+ 40 if input_message:                                                                     
+ 41     st.session_state.input_message_key = str(random())                                
+ 42     # -- PROCESS YOUR TEXT HERE --                                                    
+ 43     st.session_state.all_messages.append(input_message)                               
+ 44     st.experimental_rerun()                                                           
+ 45                                                                                       
+ 46     
+
+
+
+==============
+You can execute the following actions:
+[read] <filename> <linestart:lineend>
+[replace] <filename> <linestart:lineend>
+<content>
+
+Modify the above code so the textfield is editable
+Action:
+
+
+
+
+
+ File "/home/tom/git/chat_gpt_coder/streamlit_app.py", line 23
+      )
+     ^
+IndentationError: unexpected indent
+==============
+You can execute the following actions:
+[read] <filename> <linestart:lineend>
+[replace] <filename> <linestart:lineend>
+<content>
+
+Always start your messages with the action you want to take.
+Fix the error
+Action:
+[
+
+
+
+
+
+ File "/home/tom/git/chat_gpt_coder/streamlit_app.py", line 23
+      )
+     ^
+IndentationError: unexpected indent
+==============
+You can execute the following actions:
+[read] <filename> <linestart:lineend>
+[replace] <filename> <linestart:lineend>
+<content>
+
+Always start your messages with the action you want to take.
+Remove the parenthesis
+Action:
